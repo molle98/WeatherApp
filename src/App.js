@@ -18,7 +18,7 @@ function App() {
           const lat = position.coords.latitude;
           const lon = position.coords.longitude;
 
-          const apiKey = '0dae4fc53ada99bb77c5eacfec41a1ad';
+          const apiKey = process.env.REACT_APP_API_KEY;
           axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=en`)
               .then(response => {
                   setDatosClima(response.data);

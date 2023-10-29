@@ -10,7 +10,7 @@ export default function Formulario({ setDatosClima, setCargando, setUsarGeolocal
 
     setCargando(true);
 
-    const apiKey = '0dae4fc53ada99bb77c5eacfec41a1ad';
+    const apiKey = process.env.REACT_APP_API_KEY;
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang=es`)
     .then(response => {
       setDatosClima(response.data);
